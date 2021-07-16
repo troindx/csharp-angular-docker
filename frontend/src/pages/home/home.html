@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      LanguageWire Ionic Front-end Example
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    The world is my oyster. Type what you want to translate and don't forget to select the languages properly.
+  </p>
+  
+  <ion-item>
+    <ion-label>What is the origin language?</ion-label>
+    <ion-select name="from" [(ngModel)]="from" placeholder="Select One">
+      <ion-option value="es" selected>Español</ion-option>
+      <ion-option value="en">English</ion-option>
+      <ion-option value="fr">Français</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>What do you want me to translate it to?</ion-label>
+    <ion-select name="to" [(ngModel)]="to" placeholder="Select One">
+      <ion-option value="es">Español</ion-option>
+      <ion-option value="en" selected>English</ion-option>
+      <ion-option value="fr">Français</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Text to translate</ion-label>
+    <ion-input name="text" [(ngModel)]="text" (keypress)="RetrieveTranslation()"></ion-input>
+  </ion-item>
+  <ion-spinner *ngIf="timeout"></ion-spinner>
+  <p>{{translatedText}}</p>
+</ion-content>

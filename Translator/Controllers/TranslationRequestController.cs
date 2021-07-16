@@ -10,10 +10,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Translator.Models;
 using Translator.Services;
+using System.Web.Http.Cors;
 
 namespace Translator.Controllers
 {
     [ApiController]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [Route("api/[controller]")]
     public class TranslationRequestController : ControllerBase
     {

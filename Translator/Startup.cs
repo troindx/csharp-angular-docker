@@ -28,6 +28,25 @@ namespace Translator
         public void ConfigureServices(IServiceCollection services)
         {
             var apikey = this.Configuration["GoogleApiKey"];
+
+            //Enable CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy("FreeForAll",
+                    builder =>
+                    {
+                        builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                    });
+                 options.AddPolicy("AnotherPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://www.contoso.com")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+
+            });
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -47,9 +66,8 @@ namespace Translator
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseCors("FreeForAll");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
