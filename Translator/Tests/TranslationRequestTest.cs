@@ -6,6 +6,7 @@ using Translator.Models;
 using RestSharp.Serialization.Json;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TranslationTesting{
     [TestFixture]
