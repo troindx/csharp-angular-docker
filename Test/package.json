@@ -1,0 +1,15 @@
+{
+  "name": "lw-testing",
+  "version": "1.0.0",
+  "description": "A Test library for language wire",
+  "main": "index.js",
+  "scripts": {
+    "test": "junit *.js"
+  },
+  "author": "juan vilar",
+  "license": "ISC",
+  "dependencies": {
+    "junit": "^1.4.9",
+    "then-request": "^6.0.2"
+  }
+}
