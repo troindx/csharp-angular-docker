@@ -19,3 +19,7 @@ To generate a developer certificate run 'dotnet dev-certs https'. To trust the c
 - Attention to older docker versions. If you are not running Docker desktop but are using docker-toolbox, you may have to edit the connection settings. You can find them in
 frontend/src/environment
 Translator/appsetings.json
+
+## Testing the system
+Integration tests have been designed using NPM junit. To run the tests, the system must be running in Docker containers (even though running them in local should also work).
+In your cli, navigate to Tests folder and execute "npm install" followed by "npm test".
